@@ -4,7 +4,7 @@
 
 1. Clone the repo
  ```sh
- git clone git@github.com:Hashimrasheed/Buzz-Board-machine-test.git
+ git clone git@github.com:Hashimrasheed/BuzzBoardMachineTest.git
  ```
 2. For installing packages
   ```sh
@@ -16,4 +16,4 @@
   ```
 
 ### Technologies
-Node.Js, Express.Js, MongoDB, JWT,
+Node.Js, Express.Js, MongoDB
