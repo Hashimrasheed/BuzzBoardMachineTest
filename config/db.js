@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
- 
- const connectDB = () => {
-  const url = "mongodb://127.0.0.1/buzz_board";
- 
+
+const connectDB = () => {
+  const url = process.env.DATABASE_CONNECTION_URL;
+
   try {
     mongoose.connect(url);
   } catch (err) {
@@ -13,11 +13,11 @@ const mongoose = require("mongoose");
   dbConnection.once("open", () => {
     console.log(`Database connected: ${url}`);
   });
- 
+
   dbConnection.on("error", (err) => {
     console.error(`connection error: ${err}`);
   });
   return;
-}
+};
 
-module.exports = connectDB
+module.exports = connectDB;

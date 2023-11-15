@@ -79,8 +79,8 @@ const getSingleOrder = async (req, res) => {
   try {
     const order = await OrdersModel.findOne({ order_id: req.query.order_id });
     if (!order) {
-      return res.status(404).json({ error: 'Order not found' });
-  }
+      return res.status(404).json({ error: "Order not found" });
+    }
     res.status(200).json(order);
   } catch (error) {
     res.status(400).json({ error: error.message });
@@ -89,10 +89,12 @@ const getSingleOrder = async (req, res) => {
 
 const deleteOrder = async (req, res) => {
   try {
-    const deletedOrder = await OrdersModel.findOneAndDelete({ order_id: req.query.order_id });
+    const deletedOrder = await OrdersModel.findOneAndDelete({
+      order_id: req.query.order_id,
+    });
     if (!deletedOrder) {
-      return res.status(404).json({ error: 'Order not found' });
-  }
+      return res.status(404).json({ error: "Order not found" });
+    }
     res.status(200).json({ status: "Order deleted successfully" });
   } catch (error) {
     res.status(400).json({ error: error.message });
